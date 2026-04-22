@@ -1,0 +1,21 @@
+{% extends 'gym_app/base.html' %}
+
+{% block content %}
+<h2>Add Member</h2>
+<form method="POST">
+    {% csrf_token %}
+    Name: <input type="text" name="name"><br>
+    Age: <input type="number" name="age"><br>
+    Join Date: <input type="date" name="join_date"><br>
+    phone: <input type="date" phone="phone"><br>
+    
+    Trainer:
+    <select name="trainer">
+        {% for t in trainers %}
+        <option value="{{ t.id }}">{{ t.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

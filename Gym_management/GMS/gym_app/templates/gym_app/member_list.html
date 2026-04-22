@@ -1,0 +1,22 @@
+{% extends 'gym_app/base.html' %}
+
+{% block content %}
+<h2>Members List</h2>
+
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Trainer</th>
+</tr>
+
+{% for m in members %}
+<tr>
+    <td>{{ m.name }}</td>
+    <td>{{ m.age }}</td>
+    <td>{{ m.trainer.name }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
